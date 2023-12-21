@@ -14,7 +14,7 @@ struct Todo {
 }
 
 
-class MainViewController: UIViewController {
+class TodoListViewController: UIViewController {
 
     // 변수 선언 부분
     @IBOutlet var ToDoTableView: UITableView!
@@ -30,14 +30,14 @@ class MainViewController: UIViewController {
     // 함수 선언 부분
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function,"mainviewcontroller")
+//        print(#function,"todolistviewcontroller")
         // Do any additional setup after loading the view.
         ToDoTableView.delegate = self
         ToDoTableView.dataSource = self
         ToDoTableView.reloadData()
     }
     override func viewWillAppear(_ animated: Bool) {
-        print(#function,"mainviewcomtroller")
+//        print(#function,"todolistviewcomtroller")
         super.viewWillAppear(animated)
         
         ToDoTableView.reloadData()
@@ -49,18 +49,18 @@ class MainViewController: UIViewController {
     
 }
 
-extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MainViewController.todoList.count
+        return TodoListViewController.todoList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ToDoTableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoTableViewCell
         
-        cell.todoTableTitle.text = MainViewController.todoList[indexPath.row].todoTitle
-        cell.todoTableContents = MainViewController.todoList[indexPath.row].todoContents
-        cell.isCompletedSwitch.isOn = MainViewController.todoList[indexPath.row].isCompleted
+        cell.todoTableTitle.text = TodoListViewController.todoList[indexPath.row].todoTitle
+        cell.todoTableContents = TodoListViewController.todoList[indexPath.row].todoContents
+        cell.isCompletedSwitch.isOn = TodoListViewController.todoList[indexPath.row].isCompleted
         
         return cell
     }
@@ -68,11 +68,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        print("tableview cell selected!")
-        print(indexPath)
+//        print("tableview cell selected!")
+//        print(indexPath)
 
-        MainViewController.tempToDoTitle = MainViewController.todoList[indexPath.row].todoTitle
-        MainViewController.tempToDoContents = MainViewController.todoList[indexPath.row].todoContents
+        TodoListViewController.tempToDoTitle = TodoListViewController.todoList[indexPath.row].todoTitle
+        TodoListViewController.tempToDoContents = TodoListViewController.todoList[indexPath.row].todoContents
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -82,7 +82,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-            MainViewController.todoList.remove(at: indexPath.row)
+            TodoListViewController.todoList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
         }

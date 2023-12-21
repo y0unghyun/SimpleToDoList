@@ -15,8 +15,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        todoTitleLabelinDetail.text = MainViewController.tempToDoTitle
-        todoContentsLabelinDetail.text = MainViewController.tempToDoContents
+        todoTitleLabelinDetail.text = TodoListViewController.tempToDoTitle
+        todoContentsLabelinDetail.text = TodoListViewController.tempToDoContents
         todoTitleLabelinDetail.sizeToFit()
         todoContentsLabelinDetail.sizeToFit()
     }

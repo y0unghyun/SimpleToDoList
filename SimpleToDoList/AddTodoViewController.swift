@@ -13,7 +13,7 @@ class AddTodoViewController: UIViewController {
     @IBOutlet weak var todoTitle: UITextField!
     
     override func viewDidLoad() {
-        print(#function,"addtodoviewcontroller")
+//        print(#function,"addtodoviewcontroller")
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -28,11 +28,11 @@ class AddTodoViewController: UIViewController {
         
         // Alert 액션 객체 생성
         let addAction = UIAlertAction(title: "추가", style: UIAlertAction.Style.default){ _ in
-            print("count: \(MainViewController.todoList.count)")
-            MainViewController.todoList.append(Todo(todoTitle: self.todoTitle.text!, todoContents: self.todoContents.text! ,isCompleted: false))
+            print("count: \(TodoListViewController.todoList.count)")
+            TodoListViewController.todoList.append(Todo(todoTitle: self.todoTitle.text!, todoContents: self.todoContents.text! ,isCompleted: false))
             self.todoTitle.text = ""
             self.todoContents.text = ""
-            print("count: \(MainViewController.todoList.count)")
+            print("count: \(TodoListViewController.todoList.count)")
             
             self.navigationController?.popViewController(animated: true)
         }
