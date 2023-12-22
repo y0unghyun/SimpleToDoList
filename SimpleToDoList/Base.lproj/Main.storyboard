@@ -170,8 +170,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Jig-R6-6qr"/>
                     <connections>
-                        <outlet property="todoContents" destination="G0f-jb-XaJ" id="7Ab-iB-7NN"/>
-                        <outlet property="todoTitle" destination="02s-Am-dDf" id="4xb-bp-Pr3"/>
+                        <outlet property="todoContentsTextfield" destination="G0f-jb-XaJ" id="7Ab-iB-7NN"/>
+                        <outlet property="todoTitleTextfield" destination="02s-Am-dDf" id="4xb-bp-Pr3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J37-tK-nVI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

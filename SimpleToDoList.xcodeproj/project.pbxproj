@@ -16,6 +16,7 @@
 		140808CE2B2C2E6C000EBAF8 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140808CD2B2C2E6C000EBAF8 /* AddTodoViewController.swift */; };
 		140808D02B2C3601000EBAF8 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140808CF2B2C3601000EBAF8 /* ToDoTableViewCell.swift */; };
 		140808F82B318C5E000EBAF8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140808F72B318C5E000EBAF8 /* DetailViewController.swift */; };
+		145773E62B34537100986015 /* StrikethroughExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145773E52B34537100986015 /* StrikethroughExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		140808CD2B2C2E6C000EBAF8 /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
 		140808CF2B2C3601000EBAF8 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		140808F72B318C5E000EBAF8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		145773E52B34537100986015 /* StrikethroughExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrikethroughExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				140808C22B2B1AE2000EBAF8 /* Assets.xcassets */,
 				140808C42B2B1AE2000EBAF8 /* LaunchScreen.storyboard */,
 				140808C72B2B1AE2000EBAF8 /* Info.plist */,
+				145773E52B34537100986015 /* StrikethroughExtension.swift */,
 			);
 			path = SimpleToDoList;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				140808CE2B2C2E6C000EBAF8 /* AddTodoViewController.swift in Sources */,
 				140808BE2B2B1AE0000EBAF8 /* TodoListViewController.swift in Sources */,
 				140808BA2B2B1AE0000EBAF8 /* AppDelegate.swift in Sources */,
+				145773E62B34537100986015 /* StrikethroughExtension.swift in Sources */,
 				140808F82B318C5E000EBAF8 /* DetailViewController.swift in Sources */,
 				140808BC2B2B1AE0000EBAF8 /* SceneDelegate.swift in Sources */,
 				140808D02B2C3601000EBAF8 /* ToDoTableViewCell.swift in Sources */,

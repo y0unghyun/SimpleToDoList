@@ -9,13 +9,11 @@ import UIKit
 
 class AddTodoViewController: UIViewController {
 
-    @IBOutlet weak var todoContents: UITextField!
-    @IBOutlet weak var todoTitle: UITextField!
+    @IBOutlet weak var todoContentsTextfield: UITextField!
+    @IBOutlet weak var todoTitleTextfield: UITextField!
     
     override func viewDidLoad() {
-//        print(#function,"addtodoviewcontroller")
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -28,14 +26,13 @@ class AddTodoViewController: UIViewController {
         
         // Alert 액션 객체 생성
         let addAction = UIAlertAction(title: "추가", style: UIAlertAction.Style.default){ _ in
-            print("count: \(TodoListViewController.todoList.count)")
-            TodoListViewController.todoList.append(Todo(todoTitle: self.todoTitle.text!, todoContents: self.todoContents.text! ,isCompleted: false))
-            self.todoTitle.text = ""
-            self.todoContents.text = ""
-            print("count: \(TodoListViewController.todoList.count)")
+            TodoListViewController.todoList.append(Todo(todoTitle: self.todoTitleTextfield.text!, todoContents: self.todoContentsTextfield.text! ,isCompleted: false))
+            self.todoTitleTextfield.text = ""
+            self.todoContentsTextfield.text = ""
             
             self.navigationController?.popViewController(animated: true)
         }
+        
         let confirmAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
         let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel)
         
@@ -44,7 +41,7 @@ class AddTodoViewController: UIViewController {
         sureToAddAlert.addAction(addAction)
         sureToAddAlert.addAction(cancelAction)
         
-        if self.todoTitle.text == "" || self.todoContents.text == "" {
+        if self.todoTitleTextfield.text == "" || self.todoContentsTextfield.text == "" {
             self.present(missingTitleAlert, animated: true)
         } else {
             self.present(sureToAddAlert, animated: true)

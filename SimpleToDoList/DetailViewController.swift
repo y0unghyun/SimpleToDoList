@@ -15,8 +15,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        todoTitleLabelinDetail.text = TodoListViewController.tempToDoTitle
-        todoContentsLabelinDetail.text = TodoListViewController.tempToDoContents
+        todoTitleLabelinDetail.text = TodoListViewController.todoTitleInDetail
+        todoContentsLabelinDetail.text = TodoListViewController.todoContentsInDetail
         todoTitleLabelinDetail.sizeToFit()
         todoContentsLabelinDetail.sizeToFit()
     }
@@ -26,15 +26,5 @@ class DetailViewController: UIViewController {
         todoContentsLabelinDetail.text = ""
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

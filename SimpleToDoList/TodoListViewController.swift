@@ -18,35 +18,29 @@ class TodoListViewController: UIViewController {
 
     // 변수 선언 부분
     @IBOutlet var ToDoTableView: UITableView!
-    
-//    static var todoList: [Todo] = [Todo(todoTitle: "sample 1", todoContents: "sample 1" ,isCompleted: false),
-//                                   Todo(todoTitle: "sample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contents", todoContents: "sample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contentssample 2 contents" ,isCompleted: false),
-//                                   Todo(todoTitle: "sample 3", todoContents: "sample 3 contentssample 3 contentssample 3 contentssample 3 contentssample 3 contentssample 3 contentssample 3 contentssample 3 contentssample 3 contentssample 3 contentssample 3 contentssample 3 contentssample 3 contentssample 3 contentssample 3 contents" ,isCompleted: false)]
-    static var todoList: [Todo] = []
-    
-    static var tempToDoTitle = String()
-    static var tempToDoContents = String()
+    static var todoList: [Todo] = [Todo(todoTitle: "11", todoContents: "11111", isCompleted: true)]
+    static var todoTitleInDetail = String()
+    static var todoContentsInDetail = String()
+    static var tempIsCompleted: Bool?
     
     // 함수 선언 부분
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(#function,"todolistviewcontroller")
-        // Do any additional setup after loading the view.
         ToDoTableView.delegate = self
         ToDoTableView.dataSource = self
         ToDoTableView.reloadData()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
-//        print(#function,"todolistviewcomtroller")
         super.viewWillAppear(animated)
-        
         ToDoTableView.reloadData()
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         ToDoTableView.reloadData()
     }
-    
 }
 
 extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -58,21 +52,20 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ToDoTableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoTableViewCell
         
-        cell.todoTableTitle.text = TodoListViewController.todoList[indexPath.row].todoTitle
-        cell.todoTableContents = TodoListViewController.todoList[indexPath.row].todoContents
-        cell.isCompletedSwitch.isOn = TodoListViewController.todoList[indexPath.row].isCompleted
-        
+        cell.setCell(TodoListViewController.todoList[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-//        print("tableview cell selected!")
-//        print(indexPath)
 
-        TodoListViewController.tempToDoTitle = TodoListViewController.todoList[indexPath.row].todoTitle
-        TodoListViewController.tempToDoContents = TodoListViewController.todoList[indexPath.row].todoContents
+        TodoListViewController.todoTitleInDetail = TodoListViewController.todoList[indexPath.row].todoTitle
+        TodoListViewController.todoContentsInDetail = TodoListViewController.todoList[indexPath.row].todoContents
+        
+        if let ic = TodoListViewController.tempIsCompleted {
+            TodoListViewController.todoList[indexPath.row].isCompleted = ic
+        }
+        print(TodoListViewController.todoList[indexPath.row].isCompleted)
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
