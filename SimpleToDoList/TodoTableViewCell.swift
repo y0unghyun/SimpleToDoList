@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ToDoTableViewCell: UITableViewCell {
+class TodoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var todoTableTitle: UILabel!
     var todoTableContents: String!

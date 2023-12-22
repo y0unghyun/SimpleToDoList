@@ -50,7 +50,7 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = ToDoTableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoTableViewCell
+        let cell = ToDoTableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! TodoTableViewCell
         
         cell.setCell(TodoListViewController.todoList[indexPath.row])
         return cell
