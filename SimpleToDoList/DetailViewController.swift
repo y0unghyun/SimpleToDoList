@@ -25,6 +25,4 @@ class DetailViewController: UIViewController {
         todoTitleLabelinDetail.text = ""
         todoContentsLabelinDetail.text = ""
     }
-    
-    
 }

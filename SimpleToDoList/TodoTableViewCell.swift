@@ -17,7 +17,6 @@ class TodoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        isCompletedSwitch.setOn(false, animated: true)
         automaticallyUpdatesContentConfiguration = true
     }
 
@@ -37,13 +36,13 @@ class TodoTableViewCell: UITableViewCell {
     
     func setCell(_ _todo: Todo) {
         todo = _todo
-        guard var todo else { return }
+        guard let todo else { return }
         if todo.isCompleted  {
             todoTableTitle?.attributedText = todo.todoTitle.strikeThrough()
-            todo.isCompleted = true
+//            todo.isCompleted = true
         } else {
             todoTableTitle?.attributedText = todo.todoTitle.nonStrikeThrough()
-            todo.isCompleted = false
+//            todo.isCompleted = false
         }
         isCompletedSwitch.isOn = todo.isCompleted
     }

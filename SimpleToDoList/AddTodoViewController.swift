@@ -27,10 +27,14 @@ class AddTodoViewController: UIViewController {
         // Alert 액션 객체 생성
         let addAction = UIAlertAction(title: "추가", style: UIAlertAction.Style.default){ _ in
             TodoListViewController.todoList.append(Todo(todoTitle: self.todoTitleTextfield.text!, todoContents: self.todoContentsTextfield.text! ,isCompleted: false))
+            UserDefaults.standard.set(self.todoTitleTextfield.text, forKey: "Title")
             self.todoTitleTextfield.text = ""
             self.todoContentsTextfield.text = ""
             
-            self.navigationController?.popViewController(animated: true)
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
+            
         }
         
         let confirmAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
