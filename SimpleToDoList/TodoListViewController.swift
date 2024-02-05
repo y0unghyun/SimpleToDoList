@@ -18,7 +18,7 @@ class TodoListViewController: UIViewController {
 
     // 변수 선언 부분
     @IBOutlet var ToDoTableView: UITableView!
-    static var todoList: [Todo] = [Todo(todoTitle: "11", todoContents: "11111", isCompleted: true)]
+    static var todoList: [Todo] = []
     static var todoTitleInDetail = String()
     static var todoContentsInDetail = String()
     static var tempIsCompleted: Bool?
@@ -43,6 +43,8 @@ class TodoListViewController: UIViewController {
     }
 }
 
+
+// MARK: 메인 페이지 관련 함수
 extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
